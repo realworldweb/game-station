@@ -15,9 +15,15 @@ const SelectPlayers: FC<myProps> = ({
 	const [player1Name, setPlayer1Name] = useState('');
 	const [player2Name, setPlayer2Name] = useState('');
 	const [named, setNamed] = useState(false);
+	const [visible, setVisible] = useState(true);
 
 	return (
-		<div className='absolute flex flex-col gap-2 bg-white/75 flex-wrap z-10 w-full h-full justify-center content-center'>
+		<div
+			title='signs-selection'
+			className={`absolute flex flex-col gap-2 bg-white/75 flex-wrap z-10 w-full h-full justify-center content-center ${
+				visible ? '' : 'hidden'
+			}`}
+		>
 			{players === 0 ? (
 				<>
 					<button
@@ -34,20 +40,26 @@ const SelectPlayers: FC<myProps> = ({
 					</button>
 				</>
 			) : named ? (
-				<div className='flex flex-col flex-wrap content-center justify-center gap-4'>
-					<p className='p-0 m-0 text-xs'>
-						Player 1<br />
-						(please select your sign)
-					</p>
+				<div
+					title='select-sign'
+					className='flex flex-col flex-wrap content-center justify-center gap-4'
+				>
+					<p className='p-0 m-0 text-xs'>Player 1 (please select your sign)</p>
 					<div className='flex flex-wrap content-center justify-center gap-4'>
 						<button
-							onClick={() => setSigns('x')}
+							onClick={() => {
+								setVisible(false);
+								setSigns('x');
+							}}
 							className='bg-slate-900 text-white px-4 py-2 rounded-md'
 						>
 							x
 						</button>
 						<button
-							onClick={() => setSigns('o')}
+							onClick={() => {
+								setVisible(false);
+								setSigns('o');
+							}}
 							className='bg-slate-900 text-white px-4 py-2 rounded-md'
 						>
 							o
@@ -57,6 +69,8 @@ const SelectPlayers: FC<myProps> = ({
 			) : (
 				<form
 					className='flex flex-col justify-center gap-4'
+					name='player-names'
+					aria-label='player-names'
 					onSubmit={(e) => {
 						e.preventDefault();
 						setNamed(true);
@@ -70,18 +84,20 @@ const SelectPlayers: FC<myProps> = ({
 							className='pl-1'
 							type='text'
 							name='player1'
-							id='name'
+							aria-label='player1'
+							id='name-player1'
 							onChange={(e) => setPlayer1Name(e.target.value)}
 						/>
 						{players === 2 ? (
 							<>
-								<label htmlFor='player1'>Name(player2)</label>
+								<label htmlFor='player2'>Name(player2)</label>
 								<input
 									value={player2Name}
 									className='pl-1'
 									type='text'
 									name='player2'
-									id='name'
+									aria-label='player2'
+									id='name-player2'
 									onChange={(e) => setPlayer2Name(e.target.value)}
 								/>
 							</>
