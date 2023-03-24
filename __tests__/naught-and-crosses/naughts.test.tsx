@@ -1,11 +1,19 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import Naughts from '@/pages/naughts-and-crosses';
+import Layout from '../../layouts/main';
 
 describe('naughts', () => {
 	it('renders naughts unchanged', () => {
 		const { container } = render(<Naughts />);
 
 		expect(container).toMatchSnapshot();
+	});
+
+	it('renders main layout', () => {
+		render(<Naughts />);
+		const page = <Naughts />;
+		const getLayout = Naughts.getLayout(page);
+		expect(getLayout).toEqual(<Layout>{page}</Layout>);
 	});
 
 	describe('board', () => {
