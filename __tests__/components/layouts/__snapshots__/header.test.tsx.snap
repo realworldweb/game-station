@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> should render 1`] = `
+<div>
+  <div
+    class="relative flex flex-none flex-wrap w-100 h-14 content-center justify-center bg-neutral-900 text-white"
+  >
+    <p
+      class="text-center"
+    >
+      The Game Station
+    </p>
+  </div>
+</div>
+`;

@@ -13,11 +13,7 @@ import Player from '@/hooks/player';
 /*helpers*/
 import { computerTurn, hasWon } from '@/lib/helpers/naughts';
 
-/*types*/
-
-import { NextPageWithLayout } from '../_app';
-
-const Naughts: NextPageWithLayout = () => {
+export default function Naughts() {
 	const [board, setBoard] = useState(Array.from({ length: 9 }, () => ''));
 	const [players, setPlayers] = useState(0);
 	const [player1, playerActions1] = Player('player1');
@@ -99,10 +95,8 @@ const Naughts: NextPageWithLayout = () => {
 			</div>
 		</div>
 	);
-};
+}
 
 Naughts.getLayout = function getLayout(page: ReactElement) {
 	return <Layout>{page}</Layout>;
 };
-
-export default Naughts;
