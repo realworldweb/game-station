@@ -3,6 +3,7 @@ import {
 	findByTitle,
 	render,
 	screen,
+	act,
 } from '@testing-library/react';
 import Layout from '@/layouts/main';
 

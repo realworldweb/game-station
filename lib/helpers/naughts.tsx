@@ -1,110 +1,74 @@
-interface winMap {
-	x?: [number, string[]];
-	o?: [number, string[]];
-}
+const lines = [
+	[0, 1, 2],
+	[3, 4, 5],
+	[6, 7, 8],
+	[0, 3, 6],
+	[1, 4, 7],
+	[2, 5, 8],
+	[0, 4, 8],
+	[2, 4, 6],
+];
 
-const rows = (board: string[]) => {
-	const res = [];
+const buildBoard = (index: number, board: string[], sign: string) => {
+	const newBoard = [...board];
+	const line = lines[index];
+	const [first, second, third] = line;
+	const segment = [board[first], board[second], board[third]];
+	const space = segment.indexOf('');
 
-	while (board.length > 0) {
-		const row = board.splice(0, 3);
-		res.push(row);
-	}
+	newBoard[line[space]] = sign;
 
-	return res;
-};
-
-const columns = (rows: string[][]) => {
-	return rows.reduce(
-		(acc: string[][], val) => {
-			const [first, second, third] = val;
-			acc[0].push(first);
-			acc[1].push(second);
-			acc[2].push(third);
-			return acc;
-		},
-		[[], [], []]
-	);
-};
-
-const diagonal = (rows: string[][]): string[] => {
-	return rows.reduce((acc: string[], val: string[], index: number) => {
-		acc.push(val[index]);
-		return acc;
-	}, []);
-};
-
-const mapwins = (grid: string[][], sign: string) => {
-	const player1Sign = sign === 'x' ? 'o' : 'x';
-	let winMap: winMap = {};
-	let newRows = [...grid];
-
-	for (let row = 0; row < 3; row++) {
-		const charOnly = grid[row].filter((char) => char !== '');
-		const insertInto = grid[row].indexOf('');
-		const [first, second, third] = charOnly;
-
-		if (!third && first && first === second && !winMap.hasOwnProperty(first)) {
-			newRows = [...grid];
-			newRows[row][insertInto] = sign;
-			winMap = {
-				...winMap,
-				[first]: [row, newRows[row]],
-			};
-		}
-	}
-
-	if (winMap[sign as keyof winMap]) {
-		grid[winMap[sign as keyof winMap]![0]] = winMap[sign as keyof winMap]![1];
-		return grid;
-	} else if (winMap[player1Sign as keyof winMap]) {
-		grid[winMap[player1Sign as keyof winMap]![0]] =
-			winMap[player1Sign as keyof winMap]![1];
-		return grid;
-	}
-
-	return [['']];
+	return newBoard;
 };
 
 const computerTurn = (board: string[], sign: string) => {
-	let newBoard = [...board];
+	const newBoard = [...board];
+	const otherSign = sign === 'x' ? 'o' : 'x';
+	const hasSignIndex = newBoard.indexOf(sign);
 
-	if (!newBoard.includes(sign) && newBoard[4] === '') {
+	if (hasSignIndex === -1 && newBoard[4] === '') {
 		newBoard[4] = sign;
 		return newBoard;
 	}
 
-	if (!newBoard.includes(sign) && newBoard[0] === '') {
+	if (hasSignIndex === -1 && newBoard[0] === '') {
 		newBoard[0] = sign;
 		return newBoard;
 	}
 
-	const getRows = rows([...newBoard]);
+	let x = null;
 
-	const rowWins = mapwins(getRows, sign);
+	for (let i = 0; i < lines.length; i++) {
+		const [first, second, third] = lines[i];
 
-	if (rowWins.length > 1) {
-		newBoard = rowWins.flatMap((row) => row);
+		const segment = [board[first], board[second], board[third]];
+
+		const checks = {
+			x: segment.filter((cell) => cell === 'x'),
+			o: segment.filter((cell) => cell === 'o'),
+		};
+
+		if (checks[sign as keyof typeof checks].length === 2) {
+			return buildBoard(i, newBoard, sign);
+		}
+
+		if (checks[otherSign as keyof typeof checks].length === 2 && !x) {
+			x = i;
+			continue;
+		}
+	}
+
+	if (x !== null && x >= 0) {
+		return buildBoard(x, newBoard, sign);
+	}
+
+	if (newBoard[hasSignIndex + 1] === '') {
+		newBoard[hasSignIndex + 1] = sign;
 		return newBoard;
 	}
 
-	const getColumns = columns(getRows);
-	const columnWins = mapwins(getColumns, sign);
-
-	if (columnWins.length > 1) {
-		newBoard = columns(columnWins).flatMap((col) => col);
-		return newBoard;
-	}
-
-	const lastSign = newBoard.indexOf(sign);
-
-	if (lastSign !== -1 && newBoard[lastSign + 1] === '') {
-		newBoard[lastSign + 1] = sign;
-		return newBoard;
-	}
-
-	if (lastSign !== -1 && newBoard[lastSign - 1] === '') {
-		newBoard[lastSign - 1] = sign;
+	if (newBoard[hasSignIndex - 1] === '') {
+		newBoard[hasSignIndex - 1] = sign;
 		return newBoard;
 	}
 
@@ -114,44 +78,18 @@ const computerTurn = (board: string[], sign: string) => {
 };
 
 const hasWon = (board: string[]) => {
-	const currentBoard = [...board];
+	for (const line of lines) {
+		const [first, second, third] = line;
+		const segment = [board[first], board[second], board[third]];
+		const x = segment.every((cell) => cell === 'x');
+		const o = segment.every((cell) => cell === 'o');
 
-	const getRows = rows(currentBoard);
-
-	const winningRow = getRows.filter(
-		(row) =>
-			row.every((cell) => cell === 'x') || row.every((cell) => cell === 'o')
-	);
-
-	if (winningRow.length > 0) {
-		return true;
-	}
-
-	const getColumns = columns(getRows);
-
-	const columnCount = getColumns.filter(
-		(column) =>
-			column.every((cell) => cell === 'o') ||
-			column.every((cell) => cell === 'x')
-	);
-
-	if (columnCount.length > 0) {
-		return true;
-	}
-
-	const ltrRowO = diagonal(getRows).every((cell) => cell === 'o');
-	const ltrRowX = diagonal(getRows).every((cell) => cell === 'x');
-
-	const flip = [...getRows].reverse();
-	const rtlRowO = diagonal(flip).every((cell) => cell === 'o');
-	const rtlRowX = diagonal(flip).every((cell) => cell === 'x');
-
-	debugger;
-	if (ltrRowO || ltrRowX || rtlRowO || rtlRowX) {
-		return true;
+		if (x || o) {
+			return true;
+		}
 	}
 
 	return false;
 };
 
-export { computerTurn, hasWon, rows, columns, diagonal };
+export { computerTurn, hasWon };
