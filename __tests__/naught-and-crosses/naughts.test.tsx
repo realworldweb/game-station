@@ -17,10 +17,6 @@ import {
 } from '@/lib/helpers/naughts';
 
 describe('naughts', () => {
-	afterEach(() => {
-		// reset the mock data after each test
-		console.clear();
-	});
 	it('renders naughts unchanged', () => {
 		const { container } = render(<Naughts />);
 
@@ -183,8 +179,14 @@ describe('naughts', () => {
 			expect(won).toBe(true);
 		});
 
-		it('should return true if winning diagonal', () => {
+		it('should return true if winning diagonal ltr', () => {
 			const won = hasWon(['x', 'o', 'x', 'o', 'x', '', '', '', 'x']);
+
+			expect(won).toBe(true);
+		});
+
+		it('should return true if winning diagonal rtl', () => {
+			const won = hasWon(['', '', 'x', '', 'x', '', 'x', '', '']);
 
 			expect(won).toBe(true);
 		});
@@ -232,15 +234,21 @@ describe('naughts', () => {
 			expect(tookTurn[2]).toContain('o');
 		});
 
+		it('should block first square on a winning opponent row', () => {
+			const board = ['x', '', '', 'x', 'o', '', '', '', ''];
+			const tookTurn = computerTurn(board, 'o');
+
+			expect(tookTurn[6]).toContain('o');
+		});
+
 		it('should place a sign as close to last square as possible', () => {
-			const board = ['x', '', '', '', 'o', '', 'x', '', ''];
+			const board = ['x', '', '', '', 'o', '', '', '', 'x'];
 			const tookTurn = computerTurn(board, 'o');
 			expect(tookTurn[5]).toContain('o');
 		});
 		it('should place a sign as close to last square as possible', () => {
 			const board = ['x', '', '', '', 'x', '', '', '', 'o'];
 			const tookTurn = computerTurn(board, 'o');
-			console.log(tookTurn);
 			expect(tookTurn[7]).toContain('o');
 		});
 

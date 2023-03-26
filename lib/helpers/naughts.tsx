@@ -34,9 +34,40 @@ const diagonal = (rows: string[][]): string[] => {
 	}, []);
 };
 
+const mapwins = (grid: string[][], sign: string) => {
+	const player1Sign = sign === 'x' ? 'o' : 'x';
+	let winMap: winMap = {};
+	let newRows = [...grid];
+
+	for (let row = 0; row < 3; row++) {
+		const charOnly = grid[row].filter((char) => char !== '');
+		const insertInto = grid[row].indexOf('');
+		const [first, second, third] = charOnly;
+
+		if (!third && first && first === second && !winMap.hasOwnProperty(first)) {
+			newRows = [...grid];
+			newRows[row][insertInto] = sign;
+			winMap = {
+				...winMap,
+				[first]: [row, newRows[row]],
+			};
+		}
+	}
+
+	if (winMap[sign as keyof winMap]) {
+		grid[winMap[sign as keyof winMap]![0]] = winMap[sign as keyof winMap]![1];
+		return grid;
+	} else if (winMap[player1Sign as keyof winMap]) {
+		grid[winMap[player1Sign as keyof winMap]![0]] =
+			winMap[player1Sign as keyof winMap]![1];
+		return grid;
+	}
+
+	return [['']];
+};
+
 const computerTurn = (board: string[], sign: string) => {
 	let newBoard = [...board];
-	const player1Sign = sign === 'x' ? 'o' : 'x';
 
 	if (!newBoard.includes(sign) && newBoard[4] === '') {
 		newBoard[4] = sign;
@@ -49,31 +80,19 @@ const computerTurn = (board: string[], sign: string) => {
 	}
 
 	const getRows = rows([...newBoard]);
-	let winMap: winMap = {};
 
-	for (let row = 0; row < 3; row++) {
-		const charOnly = getRows[row].filter(Boolean);
-		const insertInto = getRows[row].indexOf('');
-		const [first, second] = charOnly;
+	const rowWins = mapwins(getRows, sign);
 
-		if (first === second && !winMap.hasOwnProperty(first)) {
-			getRows[row][insertInto] = sign;
-			winMap = {
-				...winMap,
-				[first]: [row, getRows[row]],
-			};
-		}
+	if (rowWins.length > 1) {
+		newBoard = rowWins.flatMap((row) => row);
+		return newBoard;
 	}
 
-	if (winMap[sign as keyof winMap]) {
-		getRows[winMap[sign as keyof winMap]![0]] =
-			winMap[sign as keyof winMap]![1];
-		newBoard = getRows.flatMap((row) => row);
-		return newBoard;
-	} else if (winMap[player1Sign as keyof winMap]) {
-		getRows[winMap[player1Sign as keyof winMap]![0]] =
-			winMap[player1Sign as keyof winMap]![1];
-		newBoard = getRows.flatMap((row) => row);
+	const getColumns = columns(getRows);
+	const columnWins = mapwins(getColumns, sign);
+
+	if (columnWins.length > 1) {
+		newBoard = columns(columnWins).flatMap((col) => col);
 		return newBoard;
 	}
 
@@ -85,9 +104,7 @@ const computerTurn = (board: string[], sign: string) => {
 	}
 
 	if (lastSign !== -1 && newBoard[lastSign - 1] === '') {
-		console.log(lastSign, 'ran');
 		newBoard[lastSign - 1] = sign;
-		console.log(newBoard);
 		return newBoard;
 	}
 
@@ -122,15 +139,15 @@ const hasWon = (board: string[]) => {
 		return true;
 	}
 
-	const ltrRow =
-		diagonal(getRows).every((cell) => cell === 'o') ||
-		diagonal(getRows).every((cell) => cell === 'x');
+	const ltrRowO = diagonal(getRows).every((cell) => cell === 'o');
+	const ltrRowX = diagonal(getRows).every((cell) => cell === 'x');
 
-	const rtlRow =
-		diagonal(getRows.reverse()).every((cell) => cell === 'o') ||
-		diagonal(getRows.reverse()).every((cell) => cell === 'x');
+	const flip = [...getRows].reverse();
+	const rtlRowO = diagonal(flip).every((cell) => cell === 'o');
+	const rtlRowX = diagonal(flip).every((cell) => cell === 'x');
 
-	if (ltrRow || rtlRow) {
+	debugger;
+	if (ltrRowO || ltrRowX || rtlRowO || rtlRowX) {
 		return true;
 	}
 

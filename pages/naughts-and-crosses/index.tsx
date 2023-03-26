@@ -20,6 +20,14 @@ export default function Naughts() {
 	const [player2, playerActions2] = Player('player2');
 
 	useEffect(() => {
+		if (players === 1 && player2.turn) {
+			setBoard(() => computerTurn(board, player2.sign));
+		}
+	}, [player1.turn, player2.turn]);
+
+	useEffect(() => {
+		if (!player1.turn && !player2.turn) return;
+
 		if (hasWon(board)) {
 			console.log(`${player1.turn ? player1.name : player2.name} has won`);
 			return;
@@ -27,10 +35,6 @@ export default function Naughts() {
 
 		playerActions1.setTurn(!player1.turn);
 		playerActions2.setTurn(!player2.turn);
-
-		if (players === 1 && player2.turn) {
-			setBoard(() => computerTurn(board, player2.sign));
-		}
 	}, [JSON.stringify(board)]);
 
 	const setSigns = (sign: string) => {
@@ -44,13 +48,16 @@ export default function Naughts() {
 	};
 
 	const setNames = (name1: string, name2?: string) => {
-		if (!name1) return;
-		playerActions1.setName(name1);
-
-		if (!name2) return;
-		playerActions2.setName(name2 ? name2 : 'comp');
-
+		playerActions1.setName(name1 ? name1 : 'player1');
 		playerActions1.setTurn(true);
+
+		if (players > 1) {
+			playerActions2.setName(name2 ? name2 : 'player2');
+		}
+
+		if (players === 1) {
+			playerActions2.setName('comp');
+		}
 	};
 
 	const handleTurn = (i: number) => {
@@ -70,7 +77,7 @@ export default function Naughts() {
 				setSigns={setSigns}
 			/>
 			<p title='current-player' className='text-white mb-1'>
-				{`Player: ${player1.turn ? player1.name : player2.name}`}
+				{`Player: ${player2.turn ? player2.name : player1.name}`}
 			</p>
 			<div
 				title='game-board'
