@@ -1,38 +1,26 @@
-import {
-	findByRole,
-	findByTitle,
-	render,
-	screen,
-	act,
-} from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import Layout from '@/layouts/main';
 
 describe('main layout', () => {
-	it('renders a header', () => {
-		const { container } = render(
-			<Layout>
-				<main>
-					<h1>Hello</h1>
-				</main>
-			</Layout>
-		);
+	it('renders a header', async () => {
+		let component;
+		await waitFor(() => {
+			component = render(Layout({ children: <div>Dummy</div> })!);
+		});
 
 		const header = screen.getByTitle('header');
 
-		expect(container).toContainElement(header);
+		expect(header).toBeInTheDocument();
 	});
 
-	it('renders a header', async () => {
-		const { container, findByTitle } = render(
-			<Layout>
-				<main>
-					<h1>Hello</h1>
-				</main>
-			</Layout>
-		);
+	it('renders a footer', async () => {
+		let component;
+		await waitFor(() => {
+			component = render(Layout({ children: <div>Dummy</div> })!);
+		});
 
-		const footer = await findByTitle('footer');
+		const footer = screen.getByTitle('footer');
 
-		expect(container).toContainElement(footer);
+		expect(footer).toBeInTheDocument();
 	});
 });

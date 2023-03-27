@@ -174,7 +174,6 @@ describe('naughts', () => {
 		it('should block square on a winning opponent row', () => {
 			const board = ['x', 'x', '', 'o', '', '', '', '', ''];
 			const tookTurn = computerTurn(board, 'o');
-			console.log(tookTurn);
 			expect(tookTurn[2]).toContain('o');
 		});
 
