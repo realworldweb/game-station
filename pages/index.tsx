@@ -19,10 +19,10 @@ export default function Home() {
 				/>
 				<meta name='viewport' content='width=device-width, initial-scale=1' />
 			</Head>
-			<main className=''>
+			<>
 				<h1>Welcome to the game station</h1>
 				<Link href='/naughts-and-crosses'>Naughts and crosses</Link>
-			</main>
+			</>
 		</>
 	);
 }

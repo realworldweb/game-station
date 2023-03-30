@@ -48,11 +48,17 @@ const computerTurn = (board: string[], sign: string) => {
 			o: segment.filter((cell) => cell === 'o'),
 		};
 
-		if (checks[sign as keyof typeof checks].length === 2) {
+		const total = checks.x.length + checks.o.length;
+
+		if (checks[sign as keyof typeof checks].length === 2 && total === 2) {
 			return buildBoard(i, newBoard, sign);
 		}
 
-		if (checks[otherSign as keyof typeof checks].length === 2 && !x) {
+		if (
+			checks[otherSign as keyof typeof checks].length === 2 &&
+			total === 2 &&
+			!x
+		) {
 			x = i;
 			continue;
 		}

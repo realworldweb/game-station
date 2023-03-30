@@ -1,0 +1,9 @@
+.background {
+	background: url('/ttten.svg') no-repeat,
+		linear-gradient(
+			90deg,
+			hsla(208, 33%, 21%, 1) 0%,
+			hsla(211, 36%, 46%, 1) 100%
+		);
+	background-size: cover;
+}
