@@ -41,7 +41,7 @@ export default function Naughts() {
 		const player = player1.turn ? player1.name : player2.name;
 
 		if (hasWon(board)) {
-			setWinnigInfo({ name: player, won: true });
+			setWinnigInfo({ name: player, won: true, gameOver: true });
 			return;
 		}
 

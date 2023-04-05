@@ -13,3 +13,8 @@ body,
 .relativeFont {
 	font-size: clamp(15px, 20vw, 45px);
 }
+
+.animateHide {
+	opacity: 0;
+	z-index: -100;
+}

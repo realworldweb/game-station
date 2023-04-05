@@ -1,0 +1,17 @@
+.winnersPaneEnter {
+	opacity: 0;
+}
+.winnersPaneEnterActive {
+	opacity: 1;
+	transition: opacity 200ms;
+	z-index: unset;
+}
+.winnersPaneExit {
+	opacity: 1;
+	z-index: unset;
+}
+.winnersPaneExitActive {
+	opacity: 0;
+	transition: opacity 200ms;
+	z-index: -100;
+}
