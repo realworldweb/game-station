@@ -103,9 +103,9 @@ const hasWon = (board: string[][], rowIndex: number) => {
 
 	const row = getRow(board, rowIndex);
 	const rowHasFour = countTiles(row);
-	console.log(rowHasFour);
+
 	if (rowHasFour.length === 4) {
-		//return true;
+		return true;
 	}
 
 	const diagonalLTR = getDiagonalLTR(board, rowIndex);
