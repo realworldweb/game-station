@@ -5,12 +5,14 @@ interface myProps {
 	setPlayers: Function;
 	setNames: Function;
 	setSigns: Function;
+	signs: string[];
 }
 const SelectPlayers: FC<myProps> = ({
 	players,
 	setPlayers,
 	setNames,
 	setSigns,
+	signs,
 }) => {
 	const [player1Name, setPlayer1Name] = useState('');
 	const [player2Name, setPlayer2Name] = useState('');
@@ -49,20 +51,20 @@ const SelectPlayers: FC<myProps> = ({
 						<button
 							onClick={() => {
 								setVisible(false);
-								setSigns('x');
+								setSigns(signs[0]);
 							}}
 							className='bg-slate-900 text-white px-4 py-2 rounded-md'
 						>
-							x
+							{signs[0]}
 						</button>
 						<button
 							onClick={() => {
 								setVisible(false);
-								setSigns('o');
+								setSigns(signs[1]);
 							}}
 							className='bg-slate-900 text-white px-4 py-2 rounded-md'
 						>
-							o
+							{signs[1]}
 						</button>
 					</div>
 				</div>

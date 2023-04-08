@@ -8,7 +8,11 @@ module.exports = {
 		'./layouts/**/*.{ts,tsx}',
 	],
 	theme: {
-		extend: {},
+		extend: {
+			rotate: {
+				270: '270deg',
+			},
+		},
 	},
 	plugins: [],
 };

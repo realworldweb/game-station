@@ -93,6 +93,7 @@ export default function Naughts() {
 				setPlayers={(num: number) => setPlayers(num)}
 				setNames={setNames}
 				setSigns={setSigns}
+				signs={['x', 'o']}
 			/>
 			<WinnersPane winningInfo={winningInfo} />
 			<div className='relative flex flex-col w-100 justify-center content-center'>
