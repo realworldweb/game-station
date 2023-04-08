@@ -2,7 +2,7 @@ const getRow = (board: string[][], rowIndex: number) => {
 	const newBoard = [...board];
 
 	const col = newBoard[rowIndex].findIndex((el) => el === '');
-	const tileIndex = col - 1;
+	const tileIndex = col === -1 ? 8 : col - 1;
 
 	return newBoard.reduce((acc, col, index) => {
 		if (index >= rowIndex - 3 && index <= rowIndex + 3) {
@@ -103,9 +103,9 @@ const hasWon = (board: string[][], rowIndex: number) => {
 
 	const row = getRow(board, rowIndex);
 	const rowHasFour = countTiles(row);
-
+	console.log(rowHasFour);
 	if (rowHasFour.length === 4) {
-		return true;
+		//return true;
 	}
 
 	const diagonalLTR = getDiagonalLTR(board, rowIndex);
