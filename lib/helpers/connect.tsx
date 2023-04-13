@@ -1,3 +1,8 @@
+interface block {
+	newBoard: string[][];
+	index: number;
+}
+
 const getRow = (board: string[][], rowIndex: number) => {
 	const newBoard = [...board];
 
@@ -70,23 +75,65 @@ const getDiagonalRTL = (board: string[][], rowIndex: number) => {
 };
 
 const countTiles = (arr: string[]) =>
-	arr
-		.filter((tile) => tile !== '')
-		.reduce((acc: string[], tile: string) => {
-			if (acc.length === 0) {
-				acc.push(tile);
-				return acc;
-			}
+	arr.reduce((acc: string[], tile: string) => {
+		if (acc.length === 4) {
+			return acc;
+		}
 
-			if (acc[acc.length - 1] === tile) {
-				acc.push(tile);
-				return acc;
-			} else {
-				return [];
-			}
-		}, []);
+		if (acc.length === 0 && tile !== '') {
+			acc.push(tile);
+			return acc;
+		}
 
-const computerTurn = (board: string[], sign: string) => {};
+		if (acc[acc.length - 1] === tile && tile !== '') {
+			acc.push(tile);
+			return acc;
+		}
+
+		acc = [];
+		if (tile !== '') {
+			acc.push(tile);
+		}
+
+		return acc;
+	}, []);
+
+const computerTurn = (board: string[][], sign: string) => {
+	const newBoard: string[][] = [...board];
+	let index = 0;
+	let blockMove: block | {} = {};
+
+	for (let i = 0; i < newBoard.length; i++) {
+		const filteredTiles = newBoard[i].filter((el) => el !== '');
+
+		const check =
+			filteredTiles.length > 2
+				? [...filteredTiles].splice(filteredTiles.length - 3)
+				: null;
+
+		const firstFree = newBoard[i].findIndex((el) => el === '');
+
+		if (check?.every((el) => el === sign)) {
+			newBoard[i][firstFree] = sign;
+			index = i;
+			return { newBoard, index };
+		}
+
+		if (
+			check?.every((el) => el !== sign && el !== '') &&
+			!blockMove.hasOwnProperty('newBoard')
+		) {
+			const boardConfig = [...newBoard];
+			boardConfig[i][firstFree] = sign;
+			index = i;
+			blockMove = { newBoard: boardConfig, index };
+		}
+	}
+
+	return blockMove.hasOwnProperty('newBoard')
+		? (blockMove as block)
+		: { newBoard, index };
+};
 
 const hasWon = (board: string[][], rowIndex: number) => {
 	const newBoard = [...board];

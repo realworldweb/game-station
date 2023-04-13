@@ -12,7 +12,7 @@ import SelectPlayers from '@/components/select-players';
 const WinnersPane = dynamic(() => import('../../components/winners-pane'));
 
 /*helpers*/
-import { hasWon } from '@/lib/helpers/connect';
+import { hasWon, computerTurn } from '@/lib/helpers/connect';
 
 /*reducers*/
 import Player from '@/hooks/player';
@@ -37,11 +37,13 @@ export default function Connect() {
 	const currentPlayer = player1.turn ? player1 : player2;
 	const lastRow = useRef(-1);
 
-	/* useEffect(() => {
-		if (players === 1 && player2.turn) {
-			setBoard(() => computerTurn(board, player2.sign));
-		}
-	}, [player1.turn, player2.turn]);*/
+	useEffect(() => {
+		if (!(players === 1 && player2.turn)) return;
+
+		const { newBoard, index } = computerTurn(board, player2.sign);
+		setBoard(newBoard);
+		lastRow.current = index;
+	}, [player2.turn]);
 
 	useEffect(() => {
 		if (!player1.turn && !player2.turn) return;
@@ -89,6 +91,8 @@ export default function Connect() {
 
 	const dropTile = (row: number, sign: string) => {
 		const newRow = [...board[row]];
+		const usedTiles = newRow.filter((el) => el !== '');
+		if (usedTiles.length === newRow.length) return;
 		newRow.splice(board[row].indexOf(''), 1, sign);
 
 		const newBoard = [...board];
@@ -109,7 +113,7 @@ export default function Connect() {
 
 		return (
 			<div
-				className='relative border-2  border-blue-700 w-full h-full'
+				className='relative w-full h-full border-2 border-blue-700'
 				style={{ backgroundColor: background }}
 				key={index}
 			/>
@@ -118,10 +122,10 @@ export default function Connect() {
 
 	const Board = () => {
 		return (
-			<div className='relative rotate-270 flex flex-col w-96 h-96 mx-auto'>
+			<div className='relative flex flex-col mx-auto rotate-270 w-96 h-96'>
 				{board.map((row, rowIndex) => (
 					<div
-						className='relative h-12 flex grow  justify-center'
+						className='relative flex justify-center h-12 grow'
 						key={rowIndex}
 						onClick={(e) => {
 							e.stopPropagation();
@@ -138,7 +142,7 @@ export default function Connect() {
 	};
 
 	return (
-		<div className='relative flex grow flex-none flex-wrap w-100 h-14 content-center justify-center'>
+		<div className='relative flex flex-wrap content-center justify-center flex-none grow w-100 h-14'>
 			<SelectPlayers
 				players={players}
 				setPlayers={(num: number) => setPlayers(num)}
@@ -147,8 +151,8 @@ export default function Connect() {
 				signs={['Red', 'Yellow']}
 			/>
 			<WinnersPane winningInfo={winningInfo} />
-			<div className='relative flex flex-col w-100 justify-center content-center'>
-				<p title='current-player' className='text-white text-center mb-5'>
+			<div className='relative flex flex-col content-center justify-center w-100'>
+				<p title='current-player' className='mb-5 text-center text-white'>
 					{`Player: ${player1.turn ? player1.name : player2.name}`}
 				</p>
 				<Board />
