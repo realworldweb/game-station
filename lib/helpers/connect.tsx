@@ -3,6 +3,7 @@ interface block {
 	index: number;
 }
 
+//get a row from a board based on the index of last tile
 const getRow = (board: string[][], rowIndex: number) => {
 	const newBoard = [...board];
 
@@ -17,6 +18,7 @@ const getRow = (board: string[][], rowIndex: number) => {
 	}, []);
 };
 
+//get diagonal based on position given by ltr rtl diagonal functions
 const diagonalRow = (board: string[][], choose: number, rowIndex: number) => {
 	const base = choose;
 
@@ -51,6 +53,7 @@ const diagonalRow = (board: string[][], choose: number, rowIndex: number) => {
 	}, []);
 };
 
+//get diagonal ltr based on index of last tile
 const getDiagonalLTR = (board: string[][], rowIndex: number) => {
 	const newBoard = [...board];
 
@@ -63,6 +66,7 @@ const getDiagonalLTR = (board: string[][], rowIndex: number) => {
 	return diagonalRow(newBoard, choose, rowIndex);
 };
 
+//get diagonal rtl based on index of last tile
 const getDiagonalRTL = (board: string[][], rowIndex: number) => {
 	const newBoard = [...board];
 
@@ -74,6 +78,7 @@ const getDiagonalRTL = (board: string[][], rowIndex: number) => {
 	return diagonalRow(newBoard, choose, rowIndex);
 };
 
+//count consective tiles
 const countTiles = (arr: string[]) =>
 	arr.reduce((acc: string[], tile: string) => {
 		if (acc.length === 4) {
@@ -111,7 +116,7 @@ const computerTurn = (board: string[][], sign: string) => {
 				? [...filteredTiles].splice(filteredTiles.length - 3)
 				: null;
 
-		const firstFree = newBoard[i].findIndex((el) => el === '');
+		let firstFree = newBoard[i].findIndex((el) => el === '');
 
 		if (check?.every((el) => el === sign)) {
 			newBoard[i][firstFree] = sign;
@@ -127,6 +132,62 @@ const computerTurn = (board: string[][], sign: string) => {
 			boardConfig[i][firstFree] = sign;
 			index = i;
 			blockMove = { newBoard: boardConfig, index };
+		}
+
+		if ((i + 1) % 3 === 0 && i < newBoard.length - 2) {
+			firstFree = firstFree === 0 ? 0 : firstFree - 1;
+
+			const leftRow = [
+				newBoard[i - 2][firstFree],
+				newBoard[i - 1][firstFree],
+				newBoard[i][firstFree],
+			];
+
+			const rightRow = [
+				newBoard[i][firstFree],
+				newBoard[i + 1][firstFree],
+				newBoard[i + 2][firstFree],
+			];
+
+			if (leftRow.every((el) => el === sign)) {
+				const row = [...newBoard[i + 1]];
+				row[firstFree] = sign;
+				newBoard[i + 1] = row;
+				index = i + 1;
+				return { newBoard, index };
+			}
+
+			if (
+				leftRow.every((el) => el !== sign && el !== '') &&
+				!blockMove.hasOwnProperty('newBoard')
+			) {
+				const boardConfig = [...newBoard];
+				const row = [...boardConfig[i + 1]];
+				row[firstFree] = sign;
+				boardConfig[i + 1] = row;
+				index = i + 1;
+				blockMove = { newBoard: boardConfig, index };
+			}
+
+			if (rightRow.every((el) => el === sign)) {
+				const row = newBoard[i - 1];
+				row[firstFree] = sign;
+				newBoard[i - 1] = row;
+				index = i - 1;
+				return { newBoard, index };
+			}
+
+			if (
+				rightRow.every((el) => el !== sign && el !== '') &&
+				!blockMove.hasOwnProperty('newBoard')
+			) {
+				const boardConfig = [...newBoard];
+				const row = [...boardConfig[i - 1]];
+				row[firstFree] = sign;
+				boardConfig[i - 1] = row;
+				index = i - 1;
+				blockMove = { newBoard: boardConfig, index };
+			}
 		}
 	}
 
