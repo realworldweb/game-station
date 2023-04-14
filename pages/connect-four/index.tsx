@@ -26,7 +26,7 @@ interface TileProps {
 }
 
 export default function Connect() {
-	const [board, setBoard] = useState(Array(9).fill(Array(9).fill('')));
+	const [board, setBoard] = useState(Array(8).fill(Array(9).fill('')));
 	const [players, setPlayers] = useState(0);
 	const [winningInfo, setWinnigInfo] = useState<WinningInfo>({
 		name: '',
