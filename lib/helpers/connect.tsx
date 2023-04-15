@@ -228,7 +228,6 @@ const computerTurn = (board: string[][], sign: string) => {
 
 	//use signCountMap to place tiles as close to others as possible
 	if (signCountMap.hasOwnProperty('two')) {
-		debugger;
 		const map: signCount = signCountMap as signCount;
 		const boardUpdate = [...newBoard];
 		const row = [...boardUpdate[map.two!]];
