@@ -3,6 +3,11 @@ interface block {
 	index: number;
 }
 
+interface signCount {
+	one?: number;
+	two?: number;
+}
+
 //get a row from a board based on the index of last tile
 const getRow = (board: string[][], rowIndex: number) => {
 	const newBoard = [...board];
@@ -107,6 +112,7 @@ const computerTurn = (board: string[][], sign: string) => {
 	const newBoard: string[][] = [...board];
 	let index = 0;
 	let blockMove: block | {} = {};
+	let signCountMap: signCount | {} = {};
 
 	for (let i = 0; i < newBoard.length; i++) {
 		const filteredTiles = newBoard[i].filter((el) => el !== '');
@@ -134,6 +140,22 @@ const computerTurn = (board: string[][], sign: string) => {
 			blockMove = { newBoard: boardConfig, index };
 		}
 
+		const countConsective = filteredTiles && countTiles(filteredTiles);
+		if (countConsective?.includes(sign)) {
+			if (countConsective.length === 1 && !signCountMap.hasOwnProperty('one')) {
+				signCountMap = {
+					...signCountMap,
+					one: i,
+				};
+			}
+			if (countConsective.length === 2 && !signCountMap.hasOwnProperty('two')) {
+				signCountMap = {
+					...signCountMap,
+					two: i,
+				};
+			}
+		}
+
 		if ((i + 1) % 3 === 0 && i < newBoard.length - 2) {
 			firstFree = firstFree === 0 ? 0 : firstFree - 1;
 
@@ -149,7 +171,10 @@ const computerTurn = (board: string[][], sign: string) => {
 				newBoard[i + 2][firstFree],
 			];
 
-			if (leftRow.every((el) => el === sign)) {
+			if (
+				leftRow.every((el) => el === sign) &&
+				newBoard[i + 1][firstFree] === ''
+			) {
 				const row = [...newBoard[i + 1]];
 				row[firstFree] = sign;
 				newBoard[i + 1] = row;
@@ -159,7 +184,8 @@ const computerTurn = (board: string[][], sign: string) => {
 
 			if (
 				leftRow.every((el) => el !== sign && el !== '') &&
-				!blockMove.hasOwnProperty('newBoard')
+				!blockMove.hasOwnProperty('newBoard') &&
+				newBoard[i + 1][firstFree] === ''
 			) {
 				const boardConfig = [...newBoard];
 				const row = [...boardConfig[i + 1]];
@@ -169,17 +195,22 @@ const computerTurn = (board: string[][], sign: string) => {
 				blockMove = { newBoard: boardConfig, index };
 			}
 
-			if (rightRow.every((el) => el === sign)) {
-				const row = newBoard[i - 1];
+			if (
+				rightRow.every((el) => el === sign) &&
+				newBoard[i - 1][firstFree] === ''
+			) {
+				const boardConfig = [...newBoard];
+				const row = boardConfig[i - 1];
 				row[firstFree] = sign;
-				newBoard[i - 1] = row;
+				boardConfig[i - 1] = row;
 				index = i - 1;
-				return { newBoard, index };
+				return { newBoard: boardConfig, index };
 			}
 
 			if (
 				rightRow.every((el) => el !== sign && el !== '') &&
-				!blockMove.hasOwnProperty('newBoard')
+				!blockMove.hasOwnProperty('newBoard') &&
+				newBoard[i - 1][firstFree] === ''
 			) {
 				const boardConfig = [...newBoard];
 				const row = [...boardConfig[i - 1]];
@@ -191,9 +222,45 @@ const computerTurn = (board: string[][], sign: string) => {
 		}
 	}
 
-	return blockMove.hasOwnProperty('newBoard')
-		? (blockMove as block)
-		: { newBoard, index };
+	if (blockMove.hasOwnProperty('newBoard')) {
+		return blockMove as block;
+	}
+
+	//use signCountMap to place tiles as close to others as possible
+	if (signCountMap.hasOwnProperty('two')) {
+		debugger;
+		const map: signCount = signCountMap as signCount;
+		const boardUpdate = [...newBoard];
+		const row = [...boardUpdate[map.two!]];
+		const place = row.findIndex((el) => el === '');
+		row[place] = sign;
+		boardUpdate[map.two!] = row;
+		index = map.two!;
+
+		return { newBoard: boardUpdate, index };
+	}
+
+	if (signCountMap.hasOwnProperty('one')) {
+		const map: signCount = signCountMap as signCount;
+		const boardUpdate = [...newBoard];
+		const row = [...boardUpdate[map.one!]];
+		const place = row.findIndex((el) => el === '');
+		row[place] = sign;
+		boardUpdate[map.one!] = row;
+		index = map.one!;
+
+		return { newBoard: boardUpdate, index };
+	}
+
+	//take a random move if all else fails
+
+	const randomIndex = Math.floor(Math.random() * 8);
+	const row = [...newBoard[randomIndex]];
+	const place = row.findIndex((el) => el === '');
+	row[place] = sign;
+	newBoard[randomIndex] = row;
+
+	return { newBoard, index };
 };
 
 const hasWon = (board: string[][], rowIndex: number) => {
