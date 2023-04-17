@@ -2,17 +2,35 @@
 
 exports[`Home renders homepage unchanged 1`] = `
 <div>
-  <main
-    class=""
+  <h1
+    class="text-white py-5 px-3"
   >
-    <h1>
-      Welcome to the game station
-    </h1>
+    Welcome to the game station
+  </h1>
+  <div
+    class="flex wrap content-center justify-center"
+  >
     <a
+      class="relative rounded-md shadow-xl overflow-hidden mx-auto flex"
       href="/naughts-and-crosses"
+      style="width: 310px; height: 220px;"
     >
-      Naughts and crosses
+      <img
+        alt="game image"
+        data-nimg="fill"
+        decoding="async"
+        loading="lazy"
+        sizes="100vw"
+        src="/_next/image?url=%2Fnaughts-and-crosses.webp&w=3840&q=75"
+        srcset="/_next/image?url=%2Fnaughts-and-crosses.webp&w=640&q=75 640w, /_next/image?url=%2Fnaughts-and-crosses.webp&w=750&q=75 750w, /_next/image?url=%2Fnaughts-and-crosses.webp&w=828&q=75 828w, /_next/image?url=%2Fnaughts-and-crosses.webp&w=1080&q=75 1080w, /_next/image?url=%2Fnaughts-and-crosses.webp&w=1200&q=75 1200w, /_next/image?url=%2Fnaughts-and-crosses.webp&w=1920&q=75 1920w, /_next/image?url=%2Fnaughts-and-crosses.webp&w=2048&q=75 2048w, /_next/image?url=%2Fnaughts-and-crosses.webp&w=3840&q=75 3840w"
+        style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent;"
+      />
+      <p
+        class="p-0 px-3 text-sm absolute h-8 flex flex-wrap content-center justify-center bottom-0 bg-slate-900/80 rounded-tr-md text-white z-20"
+      >
+        Naughts and crosses
+      </p>
     </a>
-  </main>
+  </div>
 </div>
 `;

@@ -11,6 +11,10 @@ import Layout from '@/layouts/main';
 import SelectPlayers from '@/components/select-players';
 const WinnersPane = dynamic(() => import('../../components/winners-pane'));
 
+/*styles*/
+
+import Styles from '@/styles/component/connect.module.css';
+
 /*helpers*/
 import { hasWon, computerTurn } from '@/lib/helpers/connect';
 
@@ -49,10 +53,10 @@ export default function Connect() {
 		if (!player1.turn && !player2.turn) return;
 		const player = player1.turn ? player1.name : player2.name;
 
-		if (hasWon(board, lastRow.current)) {
+		/*if (hasWon(board, lastRow.current)) {
 			setWinnigInfo({ name: player, won: true, gameOver: true });
 			return;
-		}
+		}*/
 
 		const tilesFull = board
 			.flatMap((tiles) => tiles)
@@ -113,18 +117,28 @@ export default function Connect() {
 
 		return (
 			<div
-				className='relative w-full h-full border-2 border-blue-700'
-				style={{ backgroundColor: background }}
+				title='game-tile'
+				className='relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700'
 				key={index}
-			/>
+				id={`${index}`}
+			>
+				<div
+					className={`relative w-2/3 h-2/3 rounded-full ${Styles.tileCap}`}
+					style={{ backgroundColor: background }}
+				/>
+			</div>
 		);
 	};
 
 	const Board = () => {
 		return (
-			<div className='relative flex flex-col mx-auto rotate-270 w-96 h-96'>
+			<div
+				title='game-board'
+				className='relative flex flex-col mx-auto rotate-270 w-96 h-96'
+			>
 				{board.map((row, rowIndex) => (
 					<div
+						title='game-column'
 						className='relative flex justify-center h-12 grow'
 						key={rowIndex}
 						onClick={(e) => {

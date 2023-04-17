@@ -1,0 +1,512 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`connect renders Connect unchanged 1`] = `
+<div>
+  <div
+    class="relative flex flex-wrap content-center justify-center flex-none grow w-100 h-14"
+  >
+    <div
+      class="absolute flex flex-col gap-2 bg-white/75 flex-wrap z-10 w-full h-full justify-center content-center "
+      title="signs-selection"
+    >
+      <button
+        class="bg-slate-900 text-white px-4 py-2 rounded-md"
+      >
+        1 player
+      </button>
+      <button
+        class="bg-slate-900 text-white px-4 py-2 rounded-md"
+      >
+        2 player
+      </button>
+    </div>
+    <div
+      class="relative flex flex-col content-center justify-center w-100"
+    >
+      <p
+        class="mb-5 text-center text-white"
+        title="current-player"
+      >
+        Player: player2
+      </p>
+      <div
+        class="relative flex flex-col mx-auto rotate-270 w-96 h-96"
+        title="game-board"
+      >
+        <div
+          class="relative flex justify-center h-12 grow"
+          title="game-column"
+        >
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="0"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="1"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="2"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="3"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="4"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="5"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="6"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="7"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="8"
+            style="background-color: white;"
+            title="game-tile"
+          />
+        </div>
+        <div
+          class="relative flex justify-center h-12 grow"
+          title="game-column"
+        >
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="0"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="1"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="2"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="3"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="4"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="5"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="6"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="7"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="8"
+            style="background-color: white;"
+            title="game-tile"
+          />
+        </div>
+        <div
+          class="relative flex justify-center h-12 grow"
+          title="game-column"
+        >
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="0"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="1"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="2"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="3"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="4"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="5"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="6"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="7"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="8"
+            style="background-color: white;"
+            title="game-tile"
+          />
+        </div>
+        <div
+          class="relative flex justify-center h-12 grow"
+          title="game-column"
+        >
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="0"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="1"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="2"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="3"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="4"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="5"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="6"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="7"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="8"
+            style="background-color: white;"
+            title="game-tile"
+          />
+        </div>
+        <div
+          class="relative flex justify-center h-12 grow"
+          title="game-column"
+        >
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="0"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="1"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="2"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="3"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="4"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="5"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="6"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="7"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="8"
+            style="background-color: white;"
+            title="game-tile"
+          />
+        </div>
+        <div
+          class="relative flex justify-center h-12 grow"
+          title="game-column"
+        >
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="0"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="1"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="2"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="3"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="4"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="5"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="6"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="7"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="8"
+            style="background-color: white;"
+            title="game-tile"
+          />
+        </div>
+        <div
+          class="relative flex justify-center h-12 grow"
+          title="game-column"
+        >
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="0"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="1"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="2"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="3"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="4"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="5"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="6"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="7"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="8"
+            style="background-color: white;"
+            title="game-tile"
+          />
+        </div>
+        <div
+          class="relative flex justify-center h-12 grow"
+          title="game-column"
+        >
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="0"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="1"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="2"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="3"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="4"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="5"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="6"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="7"
+            style="background-color: white;"
+            title="game-tile"
+          />
+          <div
+            class="relative w-full h-full border-2 border-blue-700"
+            id="8"
+            style="background-color: white;"
+            title="game-tile"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

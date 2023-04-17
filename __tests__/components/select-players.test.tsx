@@ -48,6 +48,7 @@ describe('select players', () => {
 				setNames={setNames}
 				setPlayers={setPlayers}
 				setSigns={setSigns}
+				signs={['x', 'o']}
 			/>
 		);
 
@@ -63,6 +64,7 @@ describe('select players', () => {
 				setNames={setNames}
 				setPlayers={setPlayers}
 				setSigns={setSigns}
+				signs={['x', 'o']}
 			/>
 		);
 
@@ -76,6 +78,7 @@ describe('select players', () => {
 				setNames={setNames}
 				setPlayers={setPlayers}
 				setSigns={setSigns}
+				signs={['x', 'o']}
 			/>
 		);
 
@@ -89,6 +92,7 @@ describe('select players', () => {
 				setNames={setNames}
 				setPlayers={setPlayers}
 				setSigns={setSigns}
+				signs={['x', 'o']}
 			/>
 		);
 
@@ -102,6 +106,7 @@ describe('select players', () => {
 				setNames={setNames}
 				setPlayers={setPlayers}
 				setSigns={setSigns}
+				signs={['x', 'o']}
 			/>
 		);
 
@@ -115,6 +120,7 @@ describe('select players', () => {
 				setNames={setNames}
 				setPlayers={setPlayers}
 				setSigns={setSigns}
+				signs={['x', 'o']}
 			/>
 		);
 
@@ -128,6 +134,7 @@ describe('select players', () => {
 				setNames={setNames}
 				setPlayers={setPlayers}
 				setSigns={setSigns}
+				signs={['x', 'o']}
 			/>
 		);
 
@@ -142,6 +149,7 @@ describe('select players', () => {
 				setNames={setNames}
 				setPlayers={setPlayers}
 				setSigns={setSigns}
+				signs={['x', 'o']}
 			/>
 		);
 
@@ -158,6 +166,7 @@ describe('select players', () => {
 				setNames={setNames}
 				setPlayers={setPlayers}
 				setSigns={setSigns}
+				signs={['x', 'o']}
 			/>
 		);
 
@@ -174,6 +183,7 @@ describe('select players', () => {
 				setNames={setNames}
 				setPlayers={setPlayers}
 				setSigns={setSigns}
+				signs={['x', 'o']}
 			/>
 		);
 
@@ -193,6 +203,7 @@ describe('select players', () => {
 				setNames={setNames}
 				setPlayers={setPlayers}
 				setSigns={setSigns}
+				signs={['x', 'o']}
 			/>
 		);
 
@@ -209,6 +220,7 @@ describe('select players', () => {
 				setNames={setNames}
 				setPlayers={setPlayers}
 				setSigns={setSigns}
+				signs={['x', 'o']}
 			/>
 		);
 
@@ -226,6 +238,7 @@ describe('select players', () => {
 				setNames={setNames}
 				setPlayers={setPlayers}
 				setSigns={setSigns}
+				signs={['x', 'o']}
 			/>
 		);
 
@@ -252,6 +265,7 @@ describe('select players', () => {
 				setNames={setNames}
 				setPlayers={setPlayers}
 				setSigns={setSigns}
+				signs={['x', 'o']}
 			/>
 		);
 
@@ -272,6 +286,7 @@ describe('select players', () => {
 				setNames={setNames}
 				setPlayers={setPlayers}
 				setSigns={setSigns}
+				signs={['x', 'o']}
 			/>
 		);
 		const nameForm = screen.getByRole('form', { name: /player-names/i });
@@ -294,6 +309,7 @@ describe('select players', () => {
 				setNames={setNames}
 				setPlayers={setPlayers}
 				setSigns={setSigns}
+				signs={['x', 'o']}
 			/>
 		);
 		const nameForm = screen.getByRole('form', { name: /player-names/i });
@@ -316,6 +332,7 @@ describe('select players', () => {
 				setNames={setNames}
 				setPlayers={setPlayers}
 				setSigns={setSigns}
+				signs={['x', 'o']}
 			/>
 		);
 
@@ -340,6 +357,7 @@ describe('select players', () => {
 				setNames={setNames}
 				setPlayers={setPlayers}
 				setSigns={setSigns}
+				signs={['x', 'o']}
 			/>
 		);
 
