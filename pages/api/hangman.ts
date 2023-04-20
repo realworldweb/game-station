@@ -1,5 +1,11 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
+interface HangmanResponse {
+	index: number;
+	currentBoard: string;
+	lostLives: number;
+}
+
 const uniqueWords = [
 	'Absolute',
 	'Buttered',
@@ -109,14 +115,19 @@ const randomIndex = () => {
 
 export default async function handler(
 	req: NextApiRequest,
-	res: NextApiResponse<any>
+	res: NextApiResponse<HangmanResponse>
 ) {
 	const { query } = req;
 
-	const wordIndex = query.wordIndex ? randomIndex() : query.wordIndex;
+	const wordIndex = query.hasOwnProperty('wordIndex')
+		? parseInt(query.wordIndex as string)
+		: randomIndex();
 	const word = uniqueWords[wordIndex as keyof typeof uniqueWords] as string;
-	const chars = query.chars ?? [''];
-	console.log(wordIndex, chars);
+	const chars = query.hasOwnProperty('chars')
+		? (query.chars as string).split(',')
+		: [];
+	const lostLives = chars.filter((char) => !word.includes(char)).length;
+
 	const currentBoard = word
 		.split('')
 		.map((char) => {
@@ -127,5 +138,5 @@ export default async function handler(
 		})
 		.join('');
 
-	res.status(200).json({ index: wordIndex, currentBoard });
+	res.status(200).json({ index: wordIndex, currentBoard, lostLives });
 }

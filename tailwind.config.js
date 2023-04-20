@@ -11,6 +11,7 @@ module.exports = {
 		extend: {
 			rotate: {
 				270: '270deg',
+				'1/13': '0.77%',
 			},
 		},
 	},
