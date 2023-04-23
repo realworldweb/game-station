@@ -66,10 +66,10 @@ describe('connect', () => {
 
 			const tiles = screen.getAllByTitle('game-tile');
 
-			expect(tiles[0]).toHaveStyle('background-color: red;');
+			expect(tiles[0].firstChild).toHaveStyle('background-color: red;');
 		});
 
-		it('fills tile with red if player selects red', () => {
+		it('fills tile with red if player selects yellow', () => {
 			render(<Connect />);
 			const button = screen.getByRole('button', {
 				name: /1 player/i,
@@ -101,7 +101,7 @@ describe('connect', () => {
 
 			const tiles = screen.getAllByTitle('game-tile');
 
-			expect(tiles[0]).toHaveStyle('background-color: yellow;');
+			expect(tiles[0].firstChild).toHaveStyle('background-color: yellow;');
 		});
 	});
 	describe('computer turn', () => {
