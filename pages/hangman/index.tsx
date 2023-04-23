@@ -14,6 +14,7 @@ export default function Hangman() {
 	const [chars, setChars] = useState<string[]>([]);
 	const [currentBoard, setCurrentBoard] = useState<string | null>(null);
 	const [lostLives, setLostLives] = useState<number>(0);
+	const won = currentBoard?.split('').every((char) => char !== '_');
 
 	/*refs*/
 	const wordIndex = useRef<number | null>(null);
@@ -22,12 +23,29 @@ export default function Hangman() {
 		String.fromCharCode(97 + i)
 	);
 
+	const GameOver = () => {
+		return (
+			<div className='absolute flex  flex-col mb-3 z-10 justify-center content-center bg-white/80 w-full h-full'>
+				{lostLives === 7 ? (
+					<p className='text-lg text-center'>Sorry you lost this time</p>
+				) : null}
+				{won ? <p className='text-lg'>congrats you won</p> : null}
+				<button
+					className='mt-3 bg-slate-900 rounded-md w-36 p-3 text-white mx-auto'
+					onClick={() => window.location.reload()}
+				>
+					Play again
+				</button>
+			</div>
+		);
+	};
+
 	const SelectChars = () => {
 		return (
-			<div className='relative flex flex-wrap w-4/5 mx-auto h-1/2'>
+			<div className='relative mb-3 flex flex-wrap w-4/5 mx-auto h-1/2'>
 				{alphabet.map((char, i) => {
 					let background = 'white';
-					const inBoard = currentBoard?.includes(char.toLowerCase());
+					const inBoard = currentBoard?.toLowerCase().includes(char);
 					if (chars.includes(char) && inBoard) {
 						background = 'green';
 					} else if (chars.includes(char) && !inBoard) {
@@ -67,10 +85,16 @@ export default function Hangman() {
 
 	return (
 		<div className='relative flex flex-wrap content-center justify-center flex-none grow w-100 h-14'>
-			<div className='relative flex flex-col bg-white w-96 h-96'>
-				<div className='relative flex'>
-					<HangmanSvg lives={lostLives} />
-					<div className='mr-8 tracking-widest mt-11 justify-self-end'>
+			{lostLives === 7 || won ? <GameOver /> : null}
+			<div
+				className='relative flex flex-col bg-white h-fit'
+				style={{ width: '60vw' }}
+			>
+				<div className='relative flex flex-col md:flex-row'>
+					<div className='mx-auto md:mx-0'>
+						<HangmanSvg lives={lostLives} />
+					</div>
+					<div className='mx-auto md:mx-0 md:mr-8 mb-3 tracking-widest mt-11 md:justify-self-end'>
 						{currentBoard}
 					</div>
 				</div>

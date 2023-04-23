@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-interface HangmanResponse {
+export interface HangmanResponse {
 	index: number;
 	currentBoard: string;
 	lostLives: number;
@@ -126,7 +126,9 @@ export default async function handler(
 	const chars = query.hasOwnProperty('chars')
 		? (query.chars as string).split(',')
 		: [];
-	const lostLives = chars.filter((char) => !word.includes(char)).length;
+	const lostLives = chars.filter(
+		(char) => !word.toLowerCase().includes(char)
+	).length;
 
 	const currentBoard = word
 		.split('')

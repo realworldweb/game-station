@@ -38,472 +38,760 @@ exports[`connect renders Connect unchanged 1`] = `
           title="game-column"
         >
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="0"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="1"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="2"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="3"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="4"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="5"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="6"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="7"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="8"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
         </div>
         <div
           class="relative flex justify-center h-12 grow"
           title="game-column"
         >
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="0"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="1"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="2"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="3"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="4"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="5"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="6"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="7"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="8"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
         </div>
         <div
           class="relative flex justify-center h-12 grow"
           title="game-column"
         >
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="0"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="1"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="2"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="3"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="4"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="5"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="6"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="7"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="8"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
         </div>
         <div
           class="relative flex justify-center h-12 grow"
           title="game-column"
         >
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="0"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="1"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="2"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="3"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="4"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="5"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="6"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="7"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="8"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
         </div>
         <div
           class="relative flex justify-center h-12 grow"
           title="game-column"
         >
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="0"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="1"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="2"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="3"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="4"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="5"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="6"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="7"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="8"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
         </div>
         <div
           class="relative flex justify-center h-12 grow"
           title="game-column"
         >
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="0"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="1"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="2"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="3"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="4"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="5"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="6"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="7"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="8"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
         </div>
         <div
           class="relative flex justify-center h-12 grow"
           title="game-column"
         >
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="0"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="1"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="2"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="3"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="4"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="5"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="6"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="7"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="8"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
         </div>
         <div
           class="relative flex justify-center h-12 grow"
           title="game-column"
         >
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="0"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="1"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="2"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="3"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="4"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="5"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="6"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="7"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
           <div
-            class="relative w-full h-full border-2 border-blue-700"
+            class="relative flex items-center justify-center w-full h-full overflow-hidden bg-blue-700 border-2 border-blue-700"
             id="8"
-            style="background-color: white;"
             title="game-tile"
-          />
+          >
+            <div
+              class="relative w-2/3 h-2/3 rounded-full tileCap"
+              style="background-color: white;"
+            />
+          </div>
         </div>
       </div>
     </div>
