@@ -3,7 +3,6 @@ import { ReactElement } from 'react';
 
 /*next*/
 import Head from 'next/head';
-import Link from 'next/link';
 
 /*layout*/
 import Layout from '../layouts/main';
@@ -35,6 +34,7 @@ export default function Home() {
 						url='/connect-four'
 						img='/connect-four.webp'
 					/>
+					<GameTile title='Hangman' url='/hangman' img='/hangman.webp' />
 				</div>
 			</>
 		</>

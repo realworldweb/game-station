@@ -43,6 +43,12 @@ const WinnersPane: FC<MyProps> = ({ winningInfo }) => {
 						<p className='text-center'>{`${winningInfo.name} has won the game`}</p>
 					</div>
 				)}
+				<button
+					className='bg-white rounded-md py-3'
+					onClick={() => window.location.reload()}
+				>
+					Replay
+				</button>
 			</div>
 		</CSSTransition>
 	);

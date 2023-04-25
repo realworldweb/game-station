@@ -88,7 +88,7 @@ export default function Hangman() {
 			{lostLives === 7 || won ? <GameOver /> : null}
 			<div
 				className='relative flex flex-col bg-white h-fit'
-				style={{ width: '60vw' }}
+				style={{ width: '60vw', maxWidth: '450px' }}
 			>
 				<div className='relative flex flex-col md:flex-row'>
 					<div className='mx-auto md:mx-0'>
