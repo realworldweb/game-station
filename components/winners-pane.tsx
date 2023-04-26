@@ -32,7 +32,7 @@ const WinnersPane: FC<MyProps> = ({ winningInfo }) => {
 			>
 				{winningInfo.gameOver && winningInfo.won === false ? (
 					<div className='relative flex flex-col bg-slate-900 text-white justify-center content-center p-10'>
-						<h1 className='text-center mb-2'>It's a draw</h1>
+						<h1 className='text-center mb-2'>It&apos;s a draw</h1>
 						<p className='text-center'>{`Neither player could win`}</p>
 					</div>
 				) : (
