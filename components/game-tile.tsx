@@ -17,7 +17,13 @@ const gameTile: FC<GameTileProps> = ({ title, url, img }) => {
 			className='relative rounded-md shadow-xl overflow-hidden mx-auto flex'
 			style={{ width: '310px', height: '220px' }}
 		>
-			<Image src={img} alt='game image' width='459' height='332' />
+			<Image
+				src={img}
+				alt='game image'
+				width='459'
+				height='332'
+				style={{ objectFit: 'cover' }}
+			/>
 			<p className='p-0 px-3 text-sm absolute h-8 flex flex-wrap content-center justify-center bottom-0 bg-slate-900/80 rounded-tr-md text-white z-20'>
 				{title}
 			</p>
